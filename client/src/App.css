@@ -1,14 +1,44 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;700&display=swap");
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 1em;
+  min-height: 2em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar a {
+  text-decoration: none;
+  position: relative;
+  color: #4f4846;
+  padding-left: 40px;
+  margin-left: 0.5em;
+  margin-right: 1em;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+
+.linky::after {
+  position: absolute;
+  content: " ";
+  background-color: #cd350b;
+  width: 75%;
+  height: 1px;
+  left: 9px;
+  bottom: -5px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms ease-in;
+}
+
+.linky:hover::after {
+  transform: scaleX(1);
+}
+
+h4 {
+  color: #701d06;
+  font-size: 25px;
 }
