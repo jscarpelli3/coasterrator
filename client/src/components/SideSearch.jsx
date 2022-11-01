@@ -2,11 +2,13 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { Link, useNavigate, Routes, Route } from 'react-router-dom'
 
-const SideSearch = () => {
+const SideSearch = ({onClick}) => {
 
 const onChange = () => {
   console.log("butttttonn")
 }
+
+
 
 
   return (
@@ -21,8 +23,8 @@ const onChange = () => {
       </div>
       <h4>Showgit ad Coasters By Park</h4>
       <ul>
-        <Link to="/results" ><li>Cedar Point</li></Link>
-        <li>Islands of Adventure</li>
+        <li onClick={onClick} id="Cedar Point">Cedar Point</li>
+        <li onClick={onClick} id="Islands of Adeventure">Islands of Adventure</li>
         <li>Carowinds</li>
         <li>Busch Gardens Tampa</li>
         <li>Six Flags Great Adventure</li>
