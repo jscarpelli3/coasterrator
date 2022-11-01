@@ -6,15 +6,15 @@ import Detail from "./Detail";
 import SideSearch from "./SideSearch";
 
 const Main = () => {
-  const [allCoaster, setAllCoasters] = useState(null);
+  const [allCoasters, setAllCoasters] = useState(null);
   const [selectedCoaster, setSelectedCoaster] = useState(null);
 
   const getCoasters = async () => {
     try {
-
+      
       const response = await axios.get("http://localhost:3001/coasters");
-      setAllCoasters(response.data);
-      console.log("response");
+      setAllCoasters(response.data.coasters);
+      console.log(response);
 
     } catch (err) {
       console.log(err);
@@ -38,7 +38,7 @@ const Main = () => {
 
         <Route
           path="/results"
-          element={<Results onCLick={onClick} coasters={setAllCoasters} />}
+          element={<Results onCLick={onClick} coasters={allCoasters} setCoasters={setAllCoasters} />}
         />
         <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} />
 
