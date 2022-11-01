@@ -7,20 +7,21 @@ import SideSearch from "./SideSearch";
 import RandomCoaster from "./RandomCoaster";
 
 const Main = () => {
-  const [allCoasters, setAllCoasters] = useState(null);
+  const [allCoasters, setAllCoasters] = useState([]);
   const [chosenCoasters, setChosenCoasters] = useState(null);
   const [selectedCoaster, setSelectedCoaster] = useState(null);
-
+  const [randomCoaster, setRandomCoaster] = useState(null)
   const getCoasters = async () => {
-    try {
+
       
       const response = await axios.get("http://localhost:3001/coasters");
       setAllCoasters(response.data.coasters);
       console.log(response);
+      let random =
+      response.data.coasters[Math.floor(Math.random() * response.data.coasters.length)]
+      setRandomCoaster(random)
+      console.log(random)
 
-    } catch (err) {
-      console.log(err);
-    }
   };
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const Main = () => {
         <SideSearch />
       </div>
       <Routes>
-        <Route path="/" element={<RandomCoaster coasters={allCoasters}/>} />
+        <Route path="/" element={<RandomCoaster randomCoaster={randomCoaster}/>} />
 
         <Route
           path="/results"
