@@ -36,10 +36,8 @@ const Main = () => {
   const onClick = (evt) => {
     evt.preventDefault()
     const result = allCoasters.filter(coasters => coasters.themePark===evt.target.id);
-    // let newRest = {...formState, contributor: "6352d1d1e2832c5fd43ad0e7"}
-    // setFormState(initialState)
+    setChosenCoasters(result)
     navigate('/results')
-    console.log(result)
   }
 
   return (
@@ -56,7 +54,7 @@ const Main = () => {
           path="/results"
           element={<Results onCLick={onClick} coasters={chosenCoasters} />}/>
         // {/* /> */}
-        // {/* <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} /> */}
+         <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} />
 
       </Routes>
     </div>
