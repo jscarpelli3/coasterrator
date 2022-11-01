@@ -8,7 +8,7 @@ const Results = (props) => {
 
             <h1>Name: {coaster.name}  Park: ({coaster.themePark})</h1>
             <p>Score: {coaster.score}</p>
-            <img src={coaster.image} alt={`${coaster.name}`} width="200"/>
+            <img className="result-image" src={coaster.image} alt={`${coaster.name}`}/>
             <hr/>
             
         </div>

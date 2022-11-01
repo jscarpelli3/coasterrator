@@ -53,8 +53,7 @@ const Main = () => {
         <Route
           path="/results"
           element={<Results onCLick={onClick} coasters={chosenCoasters} />}/>
-        // {/* /> */}
-         <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} />
+        <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} />
 
       </Routes>
     </div>
