@@ -1,7 +1,9 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import SideSearch from './components/SideSearch'
 import Detail from './components/Detail'
+import Main from './components/Main'
 
 function App() {
   return (
@@ -10,9 +12,10 @@ function App() {
         <Navbar />
       </header>
       <main>
-        <Routes>
+        <Main />
+        {/* <Routes>
           <Route path="/coaster" element={<Detail />} />
-        </Routes>
+        </Routes> */}
       </main>
     </div>
   )
