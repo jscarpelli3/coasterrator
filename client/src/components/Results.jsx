@@ -10,7 +10,7 @@ const Results = (props) => {
             <img src={coaster.image} alt={`${coaster.name}`} width="200"/>
             <hr/>
         </div>
-       ))}
+      ))}
     </div>
 )
 
