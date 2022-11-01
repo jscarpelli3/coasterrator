@@ -4,7 +4,8 @@ import { Link, useNavigate, Routes, Route } from "react-router-dom";
 import Results from "./Results";
 import Detail from "./Detail";
 import SideSearch from "./SideSearch";
-// import RandomCoaster from "./RandomCoaster";
+import RandomCoaster from "./RandomCoaster";
+
 
 const Main = () => {
 
@@ -12,6 +13,8 @@ const Main = () => {
   const [chosenCoasters, setChosenCoasters] = useState(null);
   const [selectedCoaster, setSelectedCoaster] = useState(null);
   const [randomCoaster, setRandomCoaster] = useState(null)
+  const navigate = useNavigate()
+
 
   const getCoasters = async () => {
 
