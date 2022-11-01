@@ -19,7 +19,7 @@ const onChange = () => {
         <input type="radio" value="4 Stars" name="4 Stars" /> 4 Stars<br></br>
         <input type="radio" value="5 Stars" name="5 Stars" /> 5 Stars<br></br>
       </div>
-      <h4>Show Coasters By Park</h4>
+      <h4>Showgit ad Coasters By Park</h4>
     </div>
   )
 }
