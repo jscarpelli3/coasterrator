@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;700&display=swap");
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -6,19 +11,6 @@
   color: white;
   padding: 1em;
   min-height: 2em;
-}
-
-.navbar a {
-  text-decoration: none;
-  position: relative;
-  color: #4f4846;
-  padding-left: 40px;
-  margin-left: 0.5em;
-  margin-right: 1em;
-  font-size: 18px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  padding: 0 10px;
 }
 
 .linky::after {
