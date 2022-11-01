@@ -8,6 +8,21 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
+.App {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+}
+
+.main {
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.side-search {
+  grid-column: 1/2;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
