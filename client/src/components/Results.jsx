@@ -3,7 +3,7 @@ const Results = (props) => {
   return (
     <div>
         {props.coasters?.map(coaster => (
-      <Link key={coaster.name} to={`/detail/${coaster._id}`>
+      // <Link key={coaster.name} to={`/detail/${coaster._id}`>
         <div >
 
             <h1>Name: {coaster.name}  Park: ({coaster.themePark})</h1>
@@ -12,7 +12,7 @@ const Results = (props) => {
             <hr/>
             
         </div>
-      </Link>
+
       ))}
     </div>
 )

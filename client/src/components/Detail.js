@@ -1,4 +1,5 @@
 import Comment from './Comment'
+import { useParams } from 'react-router-dom'
 
 const Detail = () => {
   let { id } = useParams()
