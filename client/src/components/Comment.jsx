@@ -5,9 +5,11 @@ const Comment = (props) =>  {
   let { id } = props.param.id
   let coasterComments = []
 
-  const getComments = async()=> {
+  const getComments = async ()=> {
   coasterComments = await axios.get(`http://localhost:3001/comments/${id}`)
   }
+
+  getComments()
 
 
   return (
@@ -15,6 +17,7 @@ const Comment = (props) =>  {
         {coasterComments.map(comment => (
         <div>
             <h1>Comments: {comment.comment} </h1>
+            {/* <button onClick={}>Delete</button> */}
             <hr/>
         </div>
       ))}
