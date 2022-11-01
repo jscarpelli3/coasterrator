@@ -9,5 +9,7 @@ router.get('/', (req, res) => {
 router.get('/coasters', controllers.getCoasters)
 router.get('/coaster/:id', controllers.getCoasterById)
 router.get('/comments', controllers.getComments)
+router.post('/comment', controllers.createComment)
+router.delete('/comment/:id', controllers.deleteComment)
 
 module.exports = router
