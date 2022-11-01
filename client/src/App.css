@@ -34,6 +34,10 @@ body {
   border-right: 1px solid black;
 }
 
+.result-image{
+  width: 40vw;
+}
+
 a {
   text-decoration: none;
   color: black;
