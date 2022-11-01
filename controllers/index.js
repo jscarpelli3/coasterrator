@@ -25,7 +25,8 @@ const getCoasterById = async (req, res) => {
 
 const getComments = async (req, res) => {
   try {
-    const comment = await Comment.find()
+    const { id } = req.params
+    const comment = await Comment.find({ coaster_id: id })
     if (comment) {
       return res.status(200).json({ comment })
     }
