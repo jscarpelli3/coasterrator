@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
 
-let MONGODB_URI =
-  'mongodb+srv://coasterrator1:qwerty!@99@cluster0.xtgzrvn.mongodb.net/coasters'
+
+let MONGODB_URI = 'mongodb://127.0.0.1:27017/coasterrater'
+// 'mongodb+srv://coasterrator1:qwerty!@99@cluster0.xtgzrvn.mongodb.net/coaster'
+
 
 mongoose
   .connect(MONGODB_URI)
