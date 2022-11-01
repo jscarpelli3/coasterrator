@@ -1,9 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <h4 className="coaster-rator-h4">Coaster Rator</h4>
+      <h4 className="coaster-rator-h4">Coaster Rater</h4>
       <div>
         <Link to="/" className="linky">
           Home
@@ -13,6 +13,6 @@ const Navbar = () => {
         <Link to=""></Link>
       </div>
     </nav>
-  );
-};
-export default Navbar;
+  )
+}
+export default Navbar
