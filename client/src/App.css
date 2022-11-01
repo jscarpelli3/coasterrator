@@ -1,7 +1,28 @@
+body {
+  background-image: url('https://images.unsplash.com/photo-1624829072249-ceb2152d688b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80');
+background-size: cover;
+background-repeat: none;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;700&display=swap");
 
 body {
   font-family: 'Fira Sans', sans-serif;
+}
+
+.App {
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+}
+
+.main {
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.side-search {
+  grid-column: 1/2;
 }
 
 .navbar {
