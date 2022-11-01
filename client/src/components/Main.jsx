@@ -4,12 +4,13 @@ import { Link, useNavigate, Routes, Route } from "react-router-dom";
 import Results from "./Results";
 import Detail from "./Detail";
 import SideSearch from "./SideSearch";
-import RandomCoaster from "./RandomCoaster";
+// import RandomCoaster from "./RandomCoaster";
 
 const Main = () => {
   const [allCoasters, setAllCoasters] = useState(null);
-  const [chosenCoasters, setChosenCoasters] = useState(null);
+  const [chosenCoasters, setChosenCoasters] = useState(allCoasters);
   const [selectedCoaster, setSelectedCoaster] = useState(null);
+  const navigate=useNavigate()
 
   const getCoasters = async () => {
     try {
@@ -27,19 +28,27 @@ const Main = () => {
     getCoasters();
   }, []);
 
-  const onClick = () => {};
+  const onClick = (evt) => {
+    evt.preventDefault()
+    const result = allCoasters.filter(coasters => coasters.themePark===evt.target.id);
+    // let newRest = {...formState, contributor: "6352d1d1e2832c5fd43ad0e7"}
+    // setFormState(initialState)
+    navigate('/results')
+    console.log(result)
+  }
 
   return (
     <div className="main">
       <div className="SideSearch">
-        <SideSearch />
+        <SideSearch onClick={onClick}/>
       </div>
       <Routes>
-        <Route path="/" element={<RandomCoaster coasters={allCoasters}/>} />
+        {/* <Route path="/" element={<RandomCoaster coasters={chosenCoasters}/>} /> */}
+        <Route path="/" element={<Detail />} />
 
         <Route
           path="/results"
-          element={<Results onCLick={onClick} coasters={allCoasters} setCoasters={setAllCoasters} />}/>
+          element={<Results onCLick={onClick} coasters={chosenCoasters} />}/>
         // {/* /> */}
         // {/* <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} /> */}
 
