@@ -5,6 +5,7 @@ import Results from "./Results";
 import Detail from "./Detail";
 import SideSearch from "./SideSearch";
 import RandomCoaster from "./RandomCoaster";
+import CoasterForm from "./CoasterForm";
 
 
 const Main = () => {
@@ -48,8 +49,7 @@ const Main = () => {
       <Routes>
 
         <Route path="/" element={<RandomCoaster randomCoaster={randomCoaster}/>} />
-
-
+        <Route path="/coasterform" element={<CoasterForm />} />
         <Route
           path="/results"
           element={<Results onClick={onClick} coasters={chosenCoasters} />}/>

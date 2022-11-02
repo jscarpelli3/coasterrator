@@ -11,5 +11,6 @@ router.get('/coaster/:id', controllers.getCoasterById)
 router.get('/comments', controllers.getComments)
 router.post('/comment', controllers.createComment)
 router.delete('/comment/:id', controllers.deleteComment)
+router.post('/addcoaster', controllers.addCoaster)
 
 module.exports = router
