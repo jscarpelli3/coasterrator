@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Stars from './Stars'
 
 const Detail = () => {
   const [coaster, setCoaster] =  useState(null)
@@ -29,6 +30,8 @@ const deleteCoaster = async () => {
   }
 }
 
+let curScore = parseInt(coaster?.score)
+
   useEffect(() => {
     getCoasterById()
   }, [setCoaster])
@@ -36,14 +39,17 @@ const deleteCoaster = async () => {
 
   return (
     <div className="detail">
-        <h1>{coaster?.name}</h1>
+        <h2>{coaster?.name}</h2>
         <img className='coaster-detail-image' src={coaster?.image} />
+        <div className="detail-text">
         <h2>Park Name: {coaster?.themePark}</h2>
         <h3>Highest Point: {coaster?.height}</h3>
         <h3>Largest Drop: {coaster?.largestDrop}</h3>
         <h3>Highest Speed (MPH): {coaster?.speed}</h3>
-        <h3>Inversions: {coaster?.inversions}</h3>
+        <h3>Inversions: {coaster?.inversions}</h3><br></br>
+        {coaster?.score ? <Stars curScore={curScore} />: undefined}
         <h3>Score: {coaster?.score}</h3>
+        </div>
       <div>
         <button onClick={() => {
             if (
