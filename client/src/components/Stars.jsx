@@ -5,13 +5,6 @@ const Stars = ({curScore}) =>  {
 
 console.log(score)
 
-// useEffect(() => {
-//   let newScore = parseInt({curScore})
-//   console.log(newScore)
-//   setScore(newScore)
-// }, [])
-
-
 const onClick = (evt) => {
 let newScore = parseInt(evt.target.id)
 setScore(newScore)

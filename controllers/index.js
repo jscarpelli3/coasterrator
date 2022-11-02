@@ -61,7 +61,6 @@ const deleteComment = async (req, res) => {
 const coasterByRating = async (req, res) => {
   try {
     const { score } = req.params
-    console.log('score ===', score)
     const coasters = await Coaster.find({
       score
     })

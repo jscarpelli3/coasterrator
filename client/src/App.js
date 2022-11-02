@@ -1,9 +1,6 @@
-import "./App.css";
-import { Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import SideSearch from "./components/SideSearch";
-import Detail from "./components/Detail";
-import Main from "./components/Main";
+import './App.css'
+import Navbar from './components/Navbar'
+import Main from './components/Main'
 
 function App() {
   return (
@@ -13,12 +10,9 @@ function App() {
       </header>
       <main>
         <Main />
-        {/* <Routes>
-          <Route path="/coaster" element={<Detail />} />
-        </Routes> */}
       </main>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

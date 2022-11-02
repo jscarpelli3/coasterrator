@@ -11,7 +11,6 @@ const RandomCoaster = (props) => {
         <div className="random-coaster">
           <img
             width="400"
-            // height="550"
             src={props.randomCoaster.image}
             alt={props.randomCoaster.name}
             className="random-image"

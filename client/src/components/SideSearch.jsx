@@ -1,26 +1,5 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { Link, useNavigate, Routes, Route } from "react-router-dom";
-import Results from "./Results";
-
-
 const SideSearch = ({ onClick, handleChange, handleSubmit }) => {
-  // const navigate = useNavigate();
-  // const initialState = {
-  //   score: "",
-  // };
-  // const [formState, setFormState] = useState(initialState);
-  // const handleChange = (event) => {
-  //   setFormState({ ...formState, [event.target.id]: event.target.value });
-  // };
 
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   localStorage.setItem("score", formState.score);
-  //   navigate("/results");
-  //   setFormState(initialState);
-  // };
 
   return (
 
