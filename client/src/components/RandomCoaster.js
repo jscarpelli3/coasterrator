@@ -11,7 +11,7 @@ const RandomCoaster = (props) => {
           <img
             src={props.randomCoaster.image}
             alt={props.randomCoaster.name}
-            width="500"
+            className="random-image"
           />
         </div>
       ) : null}
