@@ -3,14 +3,12 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-
 const Results = (props) => {
-const [ratingResult, setRatingResult] = useState([]);
+  const [ratingResult, setRatingResult] = useState([]);
 
   useEffect(() => {
     const data = localStorage.getItem("score");
     console.log(data);
-
 
     const getCoaster = async () => {
       const res = await axios.get(
@@ -24,8 +22,8 @@ const [ratingResult, setRatingResult] = useState([]);
   }, []);
 
   return (
-    <div>
-{/* 
+    <div className="results-content">
+      {/* 
       {ratingResult?.map((coaster) => (
         // <Link key={coaster.name} to={`/detail/${coaster._id}`>
         <div key={coaster._id}>
@@ -36,21 +34,25 @@ const [ratingResult, setRatingResult] = useState([]);
           <img src={coaster.image} alt={`${coaster.name}`} width="200" />
           <hr />
   </div>))} */}
-  
-        {props.coasters?.map(coaster => (
-      <Link key={coaster.name} to={`/coaster/${coaster._id}`}>
-        <div className="result-card" key={coaster._id}>
-          
-            <h1>Name: {coaster.name}</h1>
-            <h2>Park: {coaster.themePark}</h2>
-            <p>Score: {coaster.score}</p>
-            <img className="result-image" src={coaster.image} alt={`${coaster.name}`}/>
-            <hr/>
-        </div>
+
+      {props.coasters?.map((coaster) => (
+        <Link key={coaster.name} to={`/coaster/${coaster._id}`}>
+          <div className="result-card" key={coaster._id}>
+            <div className="result-image">
+              <img src={coaster.image} alt={`${coaster.name}`} />
+            </div>
+            <div className="result-description">
+              <h1>Name: {coaster.name}</h1>
+              <h2>Park: {coaster.themePark}</h2>
+              <p>Score: {coaster.score}</p>
+            </div>
+
+            {/* <hr/> */}
+          </div>
         </Link>
       ))}
     </div>
-  )
-}
+  );
+};
 
 export default Results;
