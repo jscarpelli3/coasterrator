@@ -6,7 +6,6 @@ body {
   width: 100%;
   height: auto;
   background-size: cover;
-  position: fixed;
   background-repeat: none;
 }
 
@@ -36,6 +35,10 @@ body {
 
 .result-image{
   width: 40vw;
+}
+
+.random-image{
+  width: 50vw;
 }
 
 a {
