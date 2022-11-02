@@ -11,7 +11,6 @@ const Detail = () => {
   const getCoasterById = async () => {
     try {
       const response = await axios.get(`http://localhost:3001/coaster/${id}`)
-    console.log(response.data.coaster)
     setCoaster(response.data.coaster)
   } catch (error){
     console.log(error)
