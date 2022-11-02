@@ -8,7 +8,10 @@ const Navbar = () => {
         <Link to="/" className="linky">
           Home
         </Link>
-        <Link to="" className="linky"></Link>
+        <br />
+        <Link to="/coasterform" className="linky">
+          New Coaster
+        </Link>
         <Link to=""></Link>
       </div>
     </nav>

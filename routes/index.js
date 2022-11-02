@@ -6,11 +6,14 @@ router.get("/", (req, res) => {
   res.send("This is Groot!");
 });
 
-router.get("/coasters", controllers.getCoasters);
-router.get("/coaster/:id", controllers.getCoasterById);
-router.get("/comments", controllers.getComments);
-router.post("/comment", controllers.createComment);
-router.delete("/comment/:id", controllers.deleteComment);
+
+router.get('/coasters', controllers.getCoasters)
+router.get('/coaster/:id', controllers.getCoasterById)
+router.get('/comments', controllers.getComments)
+router.post('/comment', controllers.createComment)
+router.delete('/comment/:id', controllers.deleteComment)
+router.post('/addcoaster', controllers.addCoaster)
 router.get("/coasters/score/:score", controllers.coasterByRating);
+
 
 module.exports = router;
