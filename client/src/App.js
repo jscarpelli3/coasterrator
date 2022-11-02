@@ -1,9 +1,9 @@
-import './App.css'
-import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import SideSearch from './components/SideSearch'
-import Detail from './components/Detail'
-import Main from './components/Main'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import SideSearch from "./components/SideSearch";
+import Detail from "./components/Detail";
+import Main from "./components/Main";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         </Routes> */}
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -8,13 +8,13 @@ const Navbar = () => {
         <Link to="/" className="linky">
           Home
         </Link>
-        <br />
+
         <Link to="/coasterform" className="linky">
           New Coaster
         </Link>
         <Link to=""></Link>
       </div>
     </nav>
-  )
-}
-export default Navbar
+  );
+};
+export default Navbar;
