@@ -26,7 +26,7 @@ const CoasterForm = () => {
       console.log(response.data.coaster)
       window.alert('You have created your roller coaster!')
       setFormState(initialState)
-      navigate('/')
+      navigate(`/coaster/${response.data.coaster._id}`)
     } catch (error) {
     console.log(error)
   }
