@@ -40,8 +40,11 @@ body {
 }
 
 .result-image{
-  height: 100px;
-  width: 100px;
+  height: 20vw;
+}
+
+.coaster-detail-image{
+  width: 50vw;
 }
 
 .result-card {
@@ -105,6 +108,14 @@ h4 {
 .coasterform{
   display: flex;
   flex-direction: column;
-  width: 40vw;
+  max-width: 40vw;
+  align-items: stretch;
+
+}
+
+.detail {
+  display: Flex;
+  flex-direction: column;
+  align-items: center;
 
 }
