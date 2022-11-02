@@ -13,7 +13,7 @@ app.use(express.json())
 app.use(express.static(`${__dirname}/client/build`))
 app.use(logger('dev'))
 app.use(cors())
-app.use('/', routes)
+app.use('/api', routes)
 app.get('/*', (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`)
 })
