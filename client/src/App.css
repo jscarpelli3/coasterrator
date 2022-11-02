@@ -271,7 +271,7 @@ h4 {
   display: Flex;
   flex-direction: column;
   align-items: center;
-
+}
 
 .coasterform input {
   margin-bottom: 40px;
