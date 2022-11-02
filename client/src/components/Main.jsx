@@ -64,7 +64,6 @@ const Main = () => {
       </div>
       <div>
       <Routes>
-
         <Route path="/" element={<RandomCoaster randomCoaster={randomCoaster}/>} />
         <Route path="/coasterform" element={<CoasterForm />} />
         <Route
