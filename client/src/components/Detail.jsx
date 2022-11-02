@@ -10,7 +10,7 @@ const Detail = () => {
 
   const getCoasterById = async () => {
     try {
-      const response = await axios.get(`http://localhost:3001/coaster/${id}`)
+      const response = await axios.get(`/api/coaster/${id}`)
     setCoaster(response.data.coaster)
   } catch (error){
     console.log(error)
@@ -20,7 +20,7 @@ const Detail = () => {
 const deleteCoaster = async () => {
   try {
     const response = await axios.delete(
-      `http://localhost:3001/coaster/${id}`
+      `/api/coaster/${id}`
     )
     window.alert('You have deleted this roller coaster')
     navigate('/')

@@ -20,7 +20,7 @@ const Main = () => {
   const getCoasters = async () => {
 
       
-      const response = await axios.get("http://localhost:3001/coasters");
+      const response = await axios.get("/api/coasters");
       setAllCoasters(response.data.coasters);
       let random =
       response.data.coasters[Math.floor(Math.random() * response.data.coasters.length)]

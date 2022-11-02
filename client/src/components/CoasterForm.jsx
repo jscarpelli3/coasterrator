@@ -22,7 +22,7 @@ const CoasterForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      let response = await axios.post(`http://localhost:3001/addcoaster`, formState)
+      let response = await axios.post(`/api/addcoaster`, formState)
       window.alert('You have created your roller coaster!')
       setFormState(initialState)
       navigate(`/coaster/${response.data.coaster._id}`)
