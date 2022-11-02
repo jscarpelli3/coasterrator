@@ -5,6 +5,7 @@ import Stars from './Stars'
 
 const Detail = () => {
   const [coaster, setCoaster] =  useState(null)
+  const [displayScore, setDisplayscore] = useState(null)
   let { id } = useParams()
   let navigate = useNavigate()
 
@@ -29,11 +30,12 @@ const deleteCoaster = async () => {
   }
 }
 
+
 let curScore = parseInt(coaster?.score)
 
-  useEffect(() => {
-    getCoasterById()
-  }, [setCoaster])
+useEffect(() => {
+  getCoasterById()
+    }, [setCoaster])
 
 
   return (
@@ -46,8 +48,8 @@ let curScore = parseInt(coaster?.score)
         <h3>Largest Drop: {coaster?.largestDrop}</h3>
         <h3>Highest Speed (MPH): {coaster?.speed}</h3>
         <h3>Inversions: {coaster?.inversions}</h3><br></br>
-        {coaster?.score ? <Stars curScore={curScore} />: undefined}
-        <h3>Score: {coaster?.score}</h3>
+        <h3>Score:</h3>
+        {coaster?.score ? <Stars curScore={curScore} coaster={coaster}/>: undefined}
         </div>
       <div>
         <button onClick={() => {

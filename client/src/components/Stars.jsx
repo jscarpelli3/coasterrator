@@ -1,13 +1,17 @@
 import { useState, useEffect } from "react";
+import axios from 'axios' 
 
-const Stars = ({curScore}) =>  {
+const Stars = ({curScore, coaster}) =>  {
   const [score, setScore] = useState(curScore)
+  let initialState= {name: coaster.name, themePark: coaster.themePark, height: coaster.height, largestDrop: coaster.largestDrop, steepestAngle: coaster.steepestAngle, speed: coaster.speed, inversions: coaster.inversions, image: coaster.image, score: coaster.score, comments: coaster.comments}
+  const [curData, setCurData] = useState(initialState)
 
-console.log(score)
 
 const onClick = (evt) => {
 let newScore = parseInt(evt.target.id)
 setScore(newScore)
+setCurData({...curData, score: newScore})
+axios.put(`http://localhost:3001/updatescore/${coaster?._id}`, curData)
 }
 
 
