@@ -27,7 +27,7 @@ const SideSearch = ({ onClick, handleChange, handleSubmit }) => {
     <div className="main-box">
       <div className="side-search">
         <div className="content-sidebar">
-          <h4>Show Coasters By Rating:</h4>
+          <h3>Show Coasters By Rating:</h3>
 
 
           <form id="form" onSubmit={handleSubmit}>
@@ -38,11 +38,9 @@ const SideSearch = ({ onClick, handleChange, handleSubmit }) => {
               <option value="4">4 stars</option>
               <option value="5">5 stars</option>
             </select>
-            <br></br>
-            <button className="view-button"> View</button>
           </form>
           <div className="links">
-            <h4 className="inner-text">Show Coasters By Park:</h4>
+            <h3 className="inner-text">Show Coasters By Park:</h3>
             <ul>
               <li onClick={onClick} id="Cedar Point">
                 Cedar Point
