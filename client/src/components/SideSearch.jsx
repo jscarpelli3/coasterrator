@@ -4,29 +4,29 @@ import { Link, useNavigate, Routes, Route } from "react-router-dom";
 import Results from "./Results";
 
 
-const SideSearch = ({ onClick }) => {
-  const navigate = useNavigate();
-  const initialState = {
-    score: "",
-  };
-  const [formState, setFormState] = useState(initialState);
-  const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value });
-  };
+const SideSearch = ({ onClick, handleChange, handleSubmit }) => {
+  // const navigate = useNavigate();
+  // const initialState = {
+  //   score: "",
+  // };
+  // const [formState, setFormState] = useState(initialState);
+  // const handleChange = (event) => {
+  //   setFormState({ ...formState, [event.target.id]: event.target.value });
+  // };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    localStorage.setItem("score", formState.score);
-    navigate("/results");
-    setFormState(initialState);
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   localStorage.setItem("score", formState.score);
+  //   navigate("/results");
+  //   setFormState(initialState);
+  // };
 
   return (
     <div className="side-search">
       <h4>Show Coasters By Rating:</h4>
 
       <form id="form" onSubmit={handleSubmit}>
-        <select onChange={handleChange} id="score" value={formState.score}>
+        <select onChange={handleChange} id="score">
           <option value="1">1 star</option>
           <option value="2">2 stars</option>
           <option value="3">3 stars</option>
