@@ -1,30 +1,45 @@
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import { Link, useNavigate, Routes, Route } from 'react-router-dom'
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { Link, useNavigate, Routes, Route } from "react-router-dom";
+import Results from "./Results";
+const SideSearch = ({ onClick }) => {
+  const navigate = useNavigate();
+  const initialState = {
+    score: "",
+  };
+  const [formState, setFormState] = useState(initialState);
+  const handleChange = (event) => {
+    setFormState({ ...formState, [event.target.id]: event.target.value });
+  };
 
-const SideSearch = ({onClick}) => {
-
-const onChange = () => {
-  console.log("butttttonn")
-}
-
-
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    localStorage.setItem("score", formState.score);
+    navigate("/results");
+    setFormState(initialState);
+  };
 
   return (
     <div className="side-search">
       <h4>Show Coasters By Rating:</h4>
-      <div className="radio-buttons" onChange={onChange}>
-        <input type="radio" value="1 Star" name="rating" /> 1 Star <br></br>
-        <input type="radio" value="2 Stars" name="rating" /> 2 Stars<br></br>
-        <input type="radio" value="3 Stars" name="rating" /> 3 Stars<br></br>
-        <input type="radio" value="4 Stars" name="rating" /> 4 Stars<br></br>
-        <input type="radio" value="5 Stars" name="rating" /> 5 Stars<br></br>
-      </div>
+      <form id="form" onSubmit={handleSubmit}>
+        <select onChange={handleChange} id="score" value={formState.score}>
+          <option value="1">1 star</option>
+          <option value="2">2 stars</option>
+          <option value="3">3 stars</option>
+          <option value="4">4 stars</option>
+          <option value="5">5 stars</option>
+        </select>
+        <button> View</button>
+      </form>
       <h4>Showgit ad Coasters By Park</h4>
       <ul>
-        <li onClick={onClick} id="Cedar Point">Cedar Point</li>
-        <li onClick={onClick} id="Islands of Adeventure">Islands of Adventure</li>
+        <li onClick={onClick} id="Cedar Point">
+          Cedar Point
+        </li>
+        <li onClick={onClick} id="Islands of Adeventure">
+          Islands of Adventure
+        </li>
         <li>Carowinds</li>
         <li>Busch Gardens Tampa</li>
         <li>Six Flags Great Adventure</li>
@@ -34,7 +49,7 @@ const onChange = () => {
         <li>Six Flags Magic Mountain</li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default SideSearch
+export default SideSearch;
