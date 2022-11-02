@@ -22,6 +22,7 @@ const SideSearch = ({ onClick }) => {
   return (
     <div className="side-search">
       <h4>Show Coasters By Rating:</h4>
+
       <form id="form" onSubmit={handleSubmit}>
         <select onChange={handleChange} id="score" value={formState.score}>
           <option value="1">1 star</option>
@@ -32,21 +33,18 @@ const SideSearch = ({ onClick }) => {
         </select>
         <button> View</button>
       </form>
-      <h4>Showgit ad Coasters By Park</h4>
+      <h4>Show Coasters By Park:</h4>
       <ul>
-        <li onClick={onClick} id="Cedar Point">
-          Cedar Point
-        </li>
-        <li onClick={onClick} id="Islands of Adeventure">
-          Islands of Adventure
-        </li>
-        <li>Carowinds</li>
-        <li>Busch Gardens Tampa</li>
-        <li>Six Flags Great Adventure</li>
-        <li>Dollywood</li>
-        <li>Holiday World</li>
-        <li>Six Flags Fiesta Texas</li>
-        <li>Six Flags Magic Mountain</li>
+        <li onClick={onClick} id="Cedar Point">Cedar Point</li>
+        <li onClick={onClick} id="Islands of Adventure">Islands of Adventure</li>
+        <li onClick={onClick} id="Carowinds">Carowinds</li>
+        <li onClick={onClick} id="Busch Gardens Tampa">Busch Gardens Tampa</li>
+        <li onClick={onClick} id="Six Flags Great Adventure">Six Flags Great Adventure</li>
+        <li onClick={onClick} id="Dollywood">Dollywood</li>
+        <li onClick={onClick} id="Holiday World">Holiday World</li>
+        <li onClick={onClick} id="Six Flags Fiesta Texas">Six Flags Fiesta Texas</li>
+        <li onClick={onClick} id="Six Flags Magic Mountain">Six Flags Magic Mountain</li>
+
       </ul>
     </div>
   );

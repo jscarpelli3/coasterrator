@@ -21,7 +21,7 @@ const Main = () => {
       
       const response = await axios.get("http://localhost:3001/coasters");
       setAllCoasters(response.data.coasters);
-      console.log(response);
+      console.log(response.data.coasters);
       let random =
       response.data.coasters[Math.floor(Math.random() * response.data.coasters.length)]
       setRandomCoaster(random)
@@ -36,10 +36,8 @@ const Main = () => {
   const onClick = (evt) => {
     evt.preventDefault()
     const result = allCoasters.filter(coasters => coasters.themePark===evt.target.id);
-    // let newRest = {...formState, contributor: "6352d1d1e2832c5fd43ad0e7"}
-    // setFormState(initialState)
+    setChosenCoasters(result)
     navigate('/results')
-    console.log(result)
   }
 
   return (
@@ -54,9 +52,8 @@ const Main = () => {
 
         <Route
           path="/results"
-          element={<Results onCLick={onClick} coasters={chosenCoasters} />}/>
-        // {/* /> */}
-        // {/* <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} /> */}
+          element={<Results onClick={onClick} coasters={chosenCoasters} />}/>
+        <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} />
 
       </Routes>
     </div>
