@@ -4,22 +4,25 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Results = (props) => {
-  const [ratingResult, setRatingResult] = useState([]);
 
-  useEffect(() => {
-    const data = localStorage.getItem("score");
-    console.log(data);
+const [ratingResult, setRatingResult] = useState([]);
+console.log(props.coasters)
+  // useEffect(() => {
+  //   const data = localStorage.getItem("score");
+  //   console.log(data);
 
-    const getCoaster = async () => {
-      const res = await axios.get(
-        `http://localhost:3001/coasters/score/${data}`
-      );
 
-      setRatingResult(res.data.coasters);
-      console.log(res.data.coasters);
-    };
-    getCoaster();
-  }, []);
+  //   const getCoaster = async () => {
+  //     const res = await axios.get(
+  //       `http://localhost:3001/coasters/score/${data}`
+  //     );
+
+  //     setRatingResult(res.data.coasters);
+  //     console.log(res.data.coasters);
+  //   };
+  //   getCoaster();
+  // }, []);
+
 
   return (
     <div className="results-content">

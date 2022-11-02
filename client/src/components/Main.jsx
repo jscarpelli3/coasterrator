@@ -9,12 +9,16 @@ import CoasterForm from "./CoasterForm";
 
 
 const Main = () => {
-
+  
   const [allCoasters, setAllCoasters] = useState([]);
   const [chosenCoasters, setChosenCoasters] = useState(null);
   const [selectedCoaster, setSelectedCoaster] = useState(null);
   const [randomCoaster, setRandomCoaster] = useState(null)
+  const [formState, setFormState] = useState([]);
   const navigate = useNavigate()
+  // const initialState = {
+  //   score: "",
+  // };
 
 
   const getCoasters = async () => {
@@ -22,12 +26,9 @@ const Main = () => {
       
       const response = await axios.get("http://localhost:3001/coasters");
       setAllCoasters(response.data.coasters);
-      console.log(response.data.coasters);
       let random =
       response.data.coasters[Math.floor(Math.random() * response.data.coasters.length)]
       setRandomCoaster(random)
-      console.log(random)
-
   };
 
   useEffect(() => {
@@ -40,15 +41,29 @@ const Main = () => {
     setChosenCoasters(result)
     navigate('/results')
   }
+  
+  // const navigate = useNavigate();
+  // const handleChange = (event) => {
+    // setFormState({ ...formState, [event.target.id]: event.target.value });
+    // chosenRating = event.target.value
+  // };
+  
+  const handleChange = (event) => {
+    event.preventDefault();
+    let chosenRating = parseInt(event.target.value)
+    const result = allCoasters.filter(coasters => coasters.score===chosenRating);
+    setChosenCoasters(result)
+    navigate("/results")
+  };
 
+  
   return (
     <div className="main">
       <div className="SideSearch">
-        <SideSearch onClick={onClick}/>
+        <SideSearch onClick={onClick}  handleChange={handleChange}/>
       </div>
       <div>
       <Routes>
-
         <Route path="/" element={<RandomCoaster randomCoaster={randomCoaster}/>} />
         <Route path="/coasterform" element={<CoasterForm />} />
         <Route

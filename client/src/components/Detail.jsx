@@ -1,44 +1,61 @@
-import Comment from './Comment'
-import { useParams } from 'react-router-dom'
-import { useState } from 'react'
 import axios from 'axios'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 const Detail = () => {
-  const initialState = { comment: '' }
-  const [formState, setFormState] = useState(initialState)
+  const [coaster, setCoaster] =  useState(null)
   let { id } = useParams()
+  let navigate = useNavigate()
 
-  const handleSubmit = async (event) => {
-    event.preventDefault()
-    console.log(formState)
-    let response = await axios.post('http://localhost:3001/comment', formState)
-    setFormState(initialState)
+  const getCoasterById = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3001/coaster/${id}`)
+    console.log(response.data.coaster)
+    setCoaster(response.data.coaster)
+  } catch (error){
+    console.log(error)
   }
+}
 
-  const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value })
+const deleteCoaster = async () => {
+  try {
+    const response = await axios.delete(
+      `http://localhost:3001/coaster/${id}`
+    )
+    window.alert('You have deleted this roller coaster')
+    navigate('/')
+  } catch (error) {
+    console.log(error)
   }
+}
+
+  useEffect(() => {
+    getCoasterById()
+  }, [setCoaster])
+
 
   return (
     <div className="detail">
+        <h1>{coaster?.name}</h1>
+        <img className='coaster-detail-image' src={coaster?.image} />
+        <h2>Park Name: {coaster?.themePark}</h2>
+        <h3>Highest Point: {coaster?.height}</h3>
+        <h3>Largest Drop: {coaster?.largestDrop}</h3>
+        <h3>Highest Speed (MPH): {coaster?.speed}</h3>
+        <h3>Inversions: {coaster?.inversions}</h3>
+        <h3>Score: {coaster?.score}</h3>
       <div>
-        <h1>Coaster Name</h1>
-        <button className="delete-coaster">Delete This Coaster!</button>
+        <button onClick={() => {
+            if (
+              window.confirm(
+                `Are you sure you want to delete ${coaster.name}?`
+              )
+            ) {
+              deleteCoaster()
+            }
+          }}>Delete This Coaster!</button>
       </div>
-      {/* <Comment id={id} />
-      <div>
-        <form className="commentform" onSubmit={handleSubmit}>
-          <label htmlFor="comment">Comment</label>
-          <textarea
-            onChange={handleChange}
-            value={formState.comment}
-            id="comment"
-            cols="20"
-            rows="5"
-          ></textarea>
-          <button type="submit">Add Comment</button>
-        </form>
-      </div> */}
+
     </div>
   )
 }

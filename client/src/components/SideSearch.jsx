@@ -3,28 +3,32 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, Routes, Route } from "react-router-dom";
 import Results from "./Results";
 
-const SideSearch = ({ onClick }) => {
-  const navigate = useNavigate();
-  const initialState = {
-    score: "",
-  };
-  const [formState, setFormState] = useState(initialState);
-  const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value });
-  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    localStorage.setItem("score", formState.score);
-    navigate("/results");
-    setFormState(initialState);
-  };
+const SideSearch = ({ onClick, handleChange, handleSubmit }) => {
+  // const navigate = useNavigate();
+  // const initialState = {
+  //   score: "",
+  // };
+  // const [formState, setFormState] = useState(initialState);
+  // const handleChange = (event) => {
+  //   setFormState({ ...formState, [event.target.id]: event.target.value });
+  // };
+
+
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   localStorage.setItem("score", formState.score);
+  //   navigate("/results");
+  //   setFormState(initialState);
+  // };
 
   return (
+
     <div className="main-box">
       <div className="side-search">
         <div className="content-sidebar">
           <h4>Show Coasters By Rating:</h4>
+
 
           <form id="form" onSubmit={handleSubmit}>
             <select onChange={handleChange} id="score" value={formState.score}>

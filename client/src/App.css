@@ -114,6 +114,7 @@ select {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
+
 .results-content {
   display: flex;
   width: 50px;
@@ -128,6 +129,7 @@ select {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   object-position: center center;
+
 }
 
 .result-card {
@@ -256,12 +258,20 @@ h4 {
 .coasterform {
   display: flex;
   flex-direction: column;
+
   justify-content: center;
   transform: translateX(60px);
   width: 40vw;
   color: white;
   position: absolute;
 }
+
+
+.detail {
+  display: Flex;
+  flex-direction: column;
+  align-items: center;
+
 
 .coasterform input {
   margin-bottom: 40px;
