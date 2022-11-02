@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const Coaster = new Schema(
   {
@@ -12,9 +12,9 @@ const Coaster = new Schema(
     inversions: { type: Number, required: false },
     image: { type: String, required: false },
     score: { type: Number, required: true },
-    comments: [{ type: Schema.Types.ObjectId, ref: 'Comment' }]
+    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
   },
   { timestamps: true }
-)
+);
 
-module.exports = mongoose.model('Coaster', Coaster)
+module.exports = mongoose.model("Coaster", Coaster);
