@@ -23,6 +23,18 @@ const getCoasterById = async (req, res) => {
   }
 }
 
+const setScore = async (req, res) => {
+  try {
+    const newScore = await Coaster.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    await newScore.save()
+    return res.status(201).json({ newScore })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 const getComments = async (req, res) => {
   try {
     const { id } = req.params
@@ -101,5 +113,6 @@ module.exports = {
   deleteComment,
   addCoaster,
   coasterByRating,
-  deleteCoaster
+  deleteCoaster,
+  setScore
 }
