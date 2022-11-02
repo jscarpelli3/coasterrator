@@ -6,6 +6,7 @@ import Detail from "./Detail";
 import SideSearch from "./SideSearch";
 import RandomCoaster from "./RandomCoaster";
 import CoasterForm from "./CoasterForm";
+import Stars from "./Stars";
 
 
 const Main = () => {
@@ -70,6 +71,7 @@ const Main = () => {
           path="/results"
           element={<Results onClick={onClick} coasters={chosenCoasters} />}/>
         <Route path="/coaster/:id" element={<Detail coaster={selectedCoaster} />} />
+        <Route path="stars" element={<Stars/>} />
 
       </Routes>
       </div>

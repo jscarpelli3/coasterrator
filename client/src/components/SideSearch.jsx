@@ -31,7 +31,7 @@ const SideSearch = ({ onClick, handleChange, handleSubmit }) => {
 
 
           <form id="form" onSubmit={handleSubmit}>
-            <select onChange={handleChange} id="score" value={formState.score}>
+            <select onChange={handleChange} id="score">
               <option value="1">1 star</option>
               <option value="2">2 stars</option>
               <option value="3">3 stars</option>
