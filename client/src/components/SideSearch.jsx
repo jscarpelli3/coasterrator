@@ -2,6 +2,8 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link, useNavigate, Routes, Route } from "react-router-dom";
 import Results from "./Results";
+
+
 const SideSearch = ({ onClick }) => {
   const navigate = useNavigate();
   const initialState = {

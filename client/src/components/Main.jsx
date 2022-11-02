@@ -46,6 +46,7 @@ const Main = () => {
       <div className="SideSearch">
         <SideSearch onClick={onClick}/>
       </div>
+      <div>
       <Routes>
 
         <Route path="/" element={<RandomCoaster randomCoaster={randomCoaster}/>} />
@@ -56,6 +57,7 @@ const Main = () => {
         <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} />
 
       </Routes>
+      </div>
     </div>
   );
 };
