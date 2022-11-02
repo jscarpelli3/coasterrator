@@ -23,8 +23,9 @@ const Detail = () => {
     <div className="detail">
       <div>
         <h1>Coaster Name</h1>
+        <button className="delete-coaster">Delete This Coaster!</button>
       </div>
-      <Comment id={id} />
+      {/* <Comment id={id} />
       <div>
         <form className="commentform" onSubmit={handleSubmit}>
           <label htmlFor="comment">Comment</label>
@@ -37,7 +38,7 @@ const Detail = () => {
           ></textarea>
           <button type="submit">Add Comment</button>
         </form>
-      </div>
+      </div> */}
     </div>
   )
 }

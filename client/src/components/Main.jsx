@@ -54,7 +54,7 @@ const Main = () => {
         <Route
           path="/results"
           element={<Results onClick={onClick} coasters={chosenCoasters} />}/>
-        <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} />
+        <Route path="/coaster/:id" element={<Detail coaster={selectedCoaster} />} />
 
       </Routes>
       </div>
