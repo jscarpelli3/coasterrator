@@ -1,10 +1,11 @@
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const Detail = () => {
   const [coaster, setCoaster] =  useState(null)
   let { id } = useParams()
+  let navigate = useNavigate()
 
   const getCoasterById = async () => {
     try {
@@ -12,6 +13,18 @@ const Detail = () => {
     console.log(response.data.coaster)
     setCoaster(response.data.coaster)
   } catch (error){
+    console.log(error)
+  }
+}
+
+const deleteCoaster = async () => {
+  try {
+    const response = await axios.delete(
+      `http://localhost:3001/coaster/${id}`
+    )
+    window.alert('You have deleted this roller coaster')
+    navigate('/')
+  } catch (error) {
     console.log(error)
   }
 }
@@ -32,7 +45,15 @@ const Detail = () => {
         <h3>Inversions: {coaster?.inversions}</h3>
         <h3>Score: {coaster?.score}</h3>
       <div>
-        <button className="delete-coaster">Delete This Coaster!</button>
+        <button onClick={() => {
+            if (
+              window.confirm(
+                `Are you sure you want to delete ${coaster.name}?`
+              )
+            ) {
+              deleteCoaster()
+            }
+          }}>Delete This Coaster!</button>
       </div>
 
     </div>
