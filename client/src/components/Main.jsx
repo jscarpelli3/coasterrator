@@ -21,7 +21,7 @@ const Main = () => {
       
       const response = await axios.get("http://localhost:3001/coasters");
       setAllCoasters(response.data.coasters);
-      console.log(response);
+      console.log(response.data.coasters);
       let random =
       response.data.coasters[Math.floor(Math.random() * response.data.coasters.length)]
       setRandomCoaster(random)
@@ -52,7 +52,7 @@ const Main = () => {
 
         <Route
           path="/results"
-          element={<Results onCLick={onClick} coasters={chosenCoasters} />}/>
+          element={<Results onClick={onClick} coasters={chosenCoasters} />}/>
         <Route path="/coaster" element={<Detail coaster={selectedCoaster} />} />
 
       </Routes>

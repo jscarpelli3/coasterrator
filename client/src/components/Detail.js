@@ -11,7 +11,7 @@ const Detail = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log(formState)
-    let response = await axios.put('http://localhost:3001/comment', formState)
+    let response = await axios.post('http://localhost:3001/comment', formState)
     setFormState(initialState)
   }
 
