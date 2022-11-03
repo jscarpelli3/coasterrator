@@ -11,7 +11,7 @@ const onClick = (evt) => {
 let newScore = parseInt(evt.target.id)
 setScore(newScore)
 setCurData({...curData, score: newScore})
-axios.put(`http://localhost:3001/updatescore/${coaster?._id}`, curData)
+axios.put(`/api/updatescore/${coaster?._id}`, curData)
 }
 
 
